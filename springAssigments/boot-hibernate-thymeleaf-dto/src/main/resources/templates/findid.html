@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+	
+<title>Find Student</title>
+
+</head>
+<body>
+
+	<div class="container">
+		<h3>Find Student</h3>
+		
+		<form action="#" th:action="@{/students/get}" th:object="${findStu}" method="POST">
+		
+			<input type="number" th:field="*{id}" class="form-control mb-4 col-4" placeholder="Enter Student Id">
+			
+			<button type="submit" class="btn btn-dark">Find</button><br/><br/>
+			<a  href="/students/list"> Students List</a>
+		
+		</form>
+		</div>
+
+</body>
+</html>

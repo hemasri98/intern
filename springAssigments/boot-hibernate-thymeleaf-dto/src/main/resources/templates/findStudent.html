@@ -1,0 +1,43 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+
+<meta charset="UTF-8">
+
+<title>Student Details</title>
+
+</head>
+
+<body>
+	<div class="container">
+		<h3>Student Details</h3>
+
+		<table class="table table-borered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			 <tr>
+			 	<td th:text=${findStu.id}></td>
+	           <td th:text=${findStu.firstName}></td>
+	           <td th:text=${findStu.lastName}></td>
+	           <td th:text=${findStu.email}></td>
+           	</tr>
+		
+		</table><br/>
+		<a  href="/students/list"> Students List</a>
+	</div>
+</body>
+
+</html>

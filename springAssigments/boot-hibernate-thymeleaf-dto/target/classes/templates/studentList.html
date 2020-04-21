@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+
+<meta charset="UTF-8">
+
+<title>Student Details</title>
+
+</head>
+
+<body>
+	<div class="container">
+		<h3>Student Details</h3>
+		
+
+		<table class="table table-borered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Perform Action</th>
+				</tr>
+			</thead>
+			<tr th:each="student : ${stuList}">
+				<td th:text="${student.id}"></td>
+				<td th:text="${student.firstName}"></td>
+				<td th:text="${student.lastName}"></td>
+				<td th:text="${student.email}"></td>
+				<!-- <td><a th:href="@{/students/edit/(id=${student.id})}" class="btn btn-primary">Update</a>    <a th:href="@{/students/delete/(id=${student.id})}" class="btn btn-danger">Delete</a></td> -->
+		
+				<td><a th:href="@{/students/edit/id/{studentId}(studentId = ${student.id})}" class="btn btn-primary">Update</a>    <a th:href="@{/students/delete/id/{studentId}(studentId = ${student.id})}" class="btn btn-danger">Delete</a></td> 
+			</tr>
+			</table>
+			<a th:href="@{/students/create}"
+	class="btn btn-dark">
+	Add Student
+	</a>
+		</div>
+	</body>
+</html>
