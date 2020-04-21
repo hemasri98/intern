@@ -1,0 +1,243 @@
+
+<html>
+	<head>
+		<!-- <script src="bundle.js"></script>> -->
+		<style>
+			.tab {
+			  overflow: hidden;
+			  border: 1px solid #ccc;
+			  background-color: #f1f1f1;
+			}
+			.Buttonlinks {
+			font-size: 20px;
+			}
+			.tab {
+			  overflow: hidden;
+			  border: 1px solid #ccc;
+			  background-color: #f1f1f1;
+			}
+
+			/* Style the buttons that are used to open the tab content */
+			.tab button {
+			  background-color: #17202A;
+			  font-size: 16px;
+			  color:white;
+			  border: none;
+			  outline: none;
+			  cursor: pointer;
+			  padding: 50px 151px;
+			  transition: 0.3s;
+			}
+
+			/* Change background color of buttons on hover */
+			.tab button:hover {
+			  background-color: #566573;
+			}
+
+			/* Create an active/current tablink class */
+			.tab button.active {
+			  background-color: #566573;
+			}
+
+			/* Style the tab content */
+			.tabcontent {
+			  font-size: 20px;
+			  display: none;
+			  padding: 12px 12px;
+			  border: 1px solid #ccc;
+			  border-top: none;
+			}
+		</style>
+		<!-- Tabs -->
+		<div class="tab">
+		  <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+		  <button class="tablinks" onclick="openTab(event, 'Aboutme')">Aboutme</button>
+		  <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+		  <button class="tablinks" onclick="openTab(event, 'Gallery')">Gallery</button>
+		  <button class="tablinks" onclick="openTab(event, 'AdminGallery')">AdminGallery</button>
+		</div>
+		<!-- Home Page-->
+		<div id="Home" class="tabcontent">
+		  <h3>Home</h3>
+		  <p>Let us explore.</p>
+		</div>
+		<!-- Aboutme -->
+		<div id="Aboutme" class="tabcontent">
+		  <h3>Aboutme</h3>
+		  <p>I am Dangudubiyyam Hemasri.</p>
+		</div>
+		<!-- Contact -->
+		<div id="Contact" class="tabcontent">
+		  <h3>Contact</h3>
+		  <form>
+			  <label for="firstName">First Name </label><input type = text name = "firstName" placeholder = "Enter your First Name" required></input><br/><br/>
+			  <label for="lastName">Last Name </label><input type = text name = "lastName" placeholder = "Enter your Last Name" required></input><br/><br/>
+			  <label for="email-id">Email-id </label><input type = email name = "email" placeholder = "Enter a valid email-id" ></input><br/><br/>
+			  <label for="PhoneNumber">Number </label><input type = number name = "phoneNumber" placeholder = "Enter your phone number"></input><br/><br/>
+		  
+		  <input type="submit" value="Submit">
+		 </form>
+		</div>
+		<!-- User Gallery -->
+		<div id="Gallery" class="tabcontent">
+		  <h3>Gallery</h3>	
+		</div>
+		<!-- Admin Gallery -->
+		<div id="AdminGallery" class="tabcontent">
+		  <h3>AdminGallery</h3>	
+			<div class="tab">
+				<button class="tablinks" onclick="openForm(event, 'AddImage')">Add Image</button>
+			  	<button class="tablinks" onclick="openForm(event, 'EditImage')">Edit Image</button>
+			  	<button class="tablinks" onclick="openForm(event, 'DeleteImage')">Delete Image</button>
+			</div>
+		</div>
+		<!-- Add Image -->
+		<div id="AddImage" class="tabcontent">
+		  <h3>AddImage</h3>
+		  
+			
+			<label for="imageURL">Image URL </label><input type = url id="imageurl" name = "imageURL" placeholder = "Enter your a valid image URL" required></input><br/><br/>
+			<label for="name">Name </label><input type = text name = "name" id = "name" placeholder = "Enter Name" required></input><br/><br/>
+			<label for="information">Information </label><br/><textarea rows = "5" cols = "60" name = "information" id = "information" placeholder = "Enter Information" ></textarea><br/><br/>
+			<label for="date">Number </label><input type = date id = "date" name = "date" placeholder = "Enter Date" required></input><br/><br/>
+			 <input type="submit" onclick = "checkDate()" value="Submit">
+			
+		</div>
+		<!-- Edit Image -->
+		<div id="EditImage" class="tabcontent">
+		  <h3>EditImage</h3>
+		 
+			  
+			<form>
+			<label for="ImageURL">Image URL </label><input type = url name = "ImageURL" placeholder = "Enter your a valid image URL" required></input><br/><br/>
+			<label for="Name">Name </label><input type = text name = "Name" placeholder = "Enter Name" required></input><br/><br/>
+			<label for="Information">Information </label><br/><textarea rows = "5" cols = "60" name = "Information" placeholder = "Enter Information" ></textarea><br/><br/>
+			<label for="Date">Number </label><input type = date id = "date" name = "Date" placeholder = "Enter Date" required></input><br/><br/>
+			 <input type="submit" onclick = "checkDate()" value="Submit">
+			</form>
+		 
+		</div>
+		<!-- Delete image -->
+		<div id="DeleteImage" class="tabcontent">
+		  <h3>DeleteImage</h3>
+		  <form>
+			<label for="ImageURL">Image URL </label><input type = url name = "ImageURL" placeholder = "Enter your a valid image URL" required></input><br/><br/>
+			<label for="Name">Name </label><input type = text name = "Name" placeholder = "Enter Name" required></input><br/><br/>mber" placeholder = "Enter your phone number"></input><br/><br/>
+		  <input type="submit" value="Submit">
+		 </form>
+		</div>
+		<script language="javascript" type="text/javascript">
+			function openTab(event, tabName) {
+
+			  // Declare all variables
+			  var i, tabcontent, tablinks;
+
+			  // Get all elements with class="tabcontent" and hide them
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+			    tabcontent[i].style.display = "none";
+			  }
+
+			  // Get all elements with class="tablinks" and remove the class "active"
+			  tablinks = document.getElementsByClassName("tablinks");
+			  for (i = 0; i < tablinks.length; i++) {
+			    tablinks[i].className = tablinks[i].className.replace(" active", "");
+			  }
+
+			  // Show the current tab, and add an "active" class to the button that opened the tab
+			  document.getElementById(tabName).style.display = "block";
+			  event.currentTarget.className += " active";
+			}
+
+			function openForm(event, tabName) {
+
+			  // Declare all variables
+			  var i, tabcontent, tablinks;
+
+			  // Get all elements with class="tabcontent" and hide them
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+			    tabcontent[i].style.display = "none";
+			  }
+
+			  // Get all elements with class="tablinks" and remove the class "active"
+			  tablinks = document.getElementsByClassName("tablinks");
+			  for (i = 0; i < tablinks.length; i++) {
+			    tablinks[i].className = tablinks[i].className.replace(" active", "");
+			  }
+
+			  // Show the current tab, and add an "active" class to the button that opened the tab
+			  document.getElementById(tabName).style.display = "block";
+			  event.currentTarget.className += " active";
+			}
+			var imageData = [];
+			
+			function checkDate() {
+				
+				var date = new Date();
+				var mydate = document.getElementById("date").value
+				var myurl = document.getElementById("imageurl").value;
+				var myimageName = document.getElementById("name").value;
+				var myinformation = document.getElementById("information").value;
+				var uploadedDate = new Date(mydate);
+				if(date < uploadedDate)
+				{
+				    alert(" The given date is Future Date. Enter correct date");
+				}
+				else{
+					var newImage = {
+						url:"",
+						imageName:"",
+						information:"",
+						date:"",				
+					};
+					newImage.url = myurl;
+					newImage.imageName = myimageName;
+					newImage.information = myinformation;
+					newImage.date = uploadedDate;
+					if (typeof localStorage === "undefined" || localStorage === null) {
+						var LocalStorage = require('node-localstorage').LocalStorage;
+						localStorage = new LocalStorage('./scratch');
+					}
+					var text = localStorage.getItem("testJSON");
+					var obj = JSON.parse(text);
+					obj.push(newImage);
+					text = JSON.stringify(obj); 
+					console.log(text);
+					
+								
+								// var fso = new ActiveXObject("Scripting.FileSystemObject");
+								// var file = fso.OpenTextFile('./imageData.json', 2, true);
+								// file.WriteLine(JSON.stringify(jsondata));
+								// file.Close();
+
+					
+				}
+			}
+
+			
+
+			var data = {
+			  "images": [{
+			    "myImage": "./sailu.jpeg"
+			  },
+			  {"myImage" : "./raja.jpeg"
+			  },
+			  {"myImage":"./hemai.jpeg"
+			  }]
+			};
+			data.images.forEach( function(obj) {
+			  var img = new Image();
+			  img.src = obj.myImage;
+			  img.setAttribute("class", "my-image");
+			  img.setAttribute("alt", "baby photo");
+			  document.getElementById("Gallery").appendChild(img);
+			});
+		</script> 
+	</head>
+</html>
+
+
+
+
+
