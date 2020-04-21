@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="stag" %>
+<!DOCTYPE html>
+<html>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
+</style>
+<body>
+<h1 style="vertical-align: center; margin-left:23%;"> Student Details </h1>
+<table style="vertical-align: center; margin-left:20%;">
+       <tr>
+       	   <th>Id</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Email Id</th>
+           <th>Action</th>
+
+       </tr>
+       <tr>
+       		<td>${findStu.id}</td>
+           <td>${findStu.firstName}</td>
+           <td>${findStu.lastName}</td>
+           <td>${findStu.email}</td>           
+           <td><a href="/students/edit/id?id=${findStu.id}">Update</a>    <a href="/students/delete/id?id=${findStu.id}">Delete</a></td>
+  
+           </tr>
+      </table>
+       <a style="vertical-align: center; margin-left:20%;" href="/students/list"> Students List</a>
+ </body>
+ </html>
