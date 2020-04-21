@@ -1,0 +1,34 @@
+problem statement:
+
+The main aim of this project is to predict the name of the object. The dataset consists of images of different home objects.
+
+
+Description:
+
+In this project, the image of the object is the input and the name of that image is an output. We had Google lens application which gives similar type of images but displaying the name of that objects looks more sensible.
+
+
+Hardware and Software Requirements:
+
+Language: Python
+Environment: Jupyter Notebook
+Libraries: numpy for array operations, keras and tensorflow for image processing, matplotlib for visualization.
+
+
+Dataset Explanation:
+
+Name: Objectcategories
+Source: Caltech 101
+Classes: 10
+No. of images: 505
+The dataset consists of images(.jpg files) of different home objects like scissors, cup, etc.
+
+
+Data Preprocessing:
+
+Resizing all the images - As data consists of different sized images, we need resize all the images into same shape.
+
+Data Visualization:
+
+
+   
